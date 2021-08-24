@@ -1,0 +1,172 @@
+{
+	"info": {
+		"_postman_id": "ffc6a75a-f38e-4527-b07a-7447a24ab1bc",
+		"name": "Datmos_test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Weather API",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const res=pm.response.json()\r",
+							"pm.test('Status code should be 200', function()\r",
+							"{\r",
+							"  pm.response.to.have.status(200)\r",
+							"})\r",
+							"pm.test('Verify latitude and longitude',function()\r",
+							"{\r",
+							"    const lat=pm.environment.get('IndiaLat')\r",
+							"    const lon=pm.environment.get('IndiaLon')\r",
+							"    pm.expect(res.coord.lon).to.eql(Number(lon))\r",
+							"    pm.expect(res.coord.lat).to.eql(Number(lat))\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "api.openweathermap.org/data/2.5/weather?q={{country}}&appid={{API key}}",
+					"host": [
+						"api",
+						"openweathermap",
+						"org"
+					],
+					"path": [
+						"data",
+						"2.5",
+						"weather"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "{{country}}"
+						},
+						{
+							"key": "appid",
+							"value": "{{API key}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Weather API with state code",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const res=pm.response.json()\r",
+							"pm.test('Status code should be 200', function()\r",
+							"{\r",
+							"  pm.response.to.have.status(200)\r",
+							"})\r",
+							"pm.test('Verify latitude and longitude',function()\r",
+							"{\r",
+							"    const lat=pm.environment.get('latitude')\r",
+							"    const lon=pm.environment.get('longitude')\r",
+							"    const city=pm.environment.get('city name')\r",
+							"    pm.expect(res.coord.lon).to.eql(Number(lon))\r",
+							"    pm.expect(res.coord.lat).to.eql(Number(lat))\r",
+							"    pm.expect(res.name).to.eql(city)\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "api.openweathermap.org/data/2.5/weather?q={{city name}},{{state code}}&appid={{API key}}",
+					"host": [
+						"api",
+						"openweathermap",
+						"org"
+					],
+					"path": [
+						"data",
+						"2.5",
+						"weather"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "{{city name}},{{state code}}"
+						},
+						{
+							"key": "appid",
+							"value": "{{API key}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Weather API with country code",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const res=pm.response.json()\r",
+							"pm.test('Status code should be 200', function()\r",
+							"{\r",
+							"  pm.response.to.have.status(200)\r",
+							"})\r",
+							"pm.test('Verify latitude and longitude',function()\r",
+							"{\r",
+							"    const lat=pm.environment.get('UKLat')\r",
+							"    const lon=pm.environment.get('UKLon')\r",
+							"    const city=pm.environment.get('city name')\r",
+							"    pm.expect(res.coord.lon).to.eql(Number(lon))\r",
+							"    pm.expect(res.coord.lat).to.eql(Number(lat))\r",
+							"    pm.expect(res.name).to.eql(city)\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "api.openweathermap.org/data/2.5/weather?q={{city name}},{{state code}},{{country code}}&appid={{API key}}",
+					"host": [
+						"api",
+						"openweathermap",
+						"org"
+					],
+					"path": [
+						"data",
+						"2.5",
+						"weather"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "{{city name}},{{state code}},{{country code}}"
+						},
+						{
+							"key": "appid",
+							"value": "{{API key}}"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

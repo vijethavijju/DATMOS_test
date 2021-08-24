@@ -1,0 +1,64 @@
+{
+	"id": "89c52569-9f59-4f6c-9854-d9ab8c1d54a4",
+	"name": "test_env",
+	"values": [
+		{
+			"key": "API key",
+			"value": "44ee963ea8384bd561e7cce2a9b68f08",
+			"enabled": true
+		},
+		{
+			"key": "country",
+			"value": "India",
+			"enabled": true
+		},
+		{
+			"key": "latitude",
+			"value": "51.5085",
+			"enabled": true
+		},
+		{
+			"key": "longitude",
+			"value": "-0.1257",
+			"enabled": true
+		},
+		{
+			"key": "state code",
+			"value": "uk",
+			"enabled": true
+		},
+		{
+			"key": "city name",
+			"value": "London",
+			"enabled": true
+		},
+		{
+			"key": "IndiaLat",
+			"value": "46.7406",
+			"enabled": true
+		},
+		{
+			"key": "IndiaLon",
+			"value": "12.2797",
+			"enabled": true
+		},
+		{
+			"key": "country code",
+			"value": "uk",
+			"enabled": true
+		},
+		{
+			"key": "UKLat",
+			"value": "51.5073",
+			"enabled": true
+		},
+		{
+			"key": "UKLon",
+			"value": "-0.1276",
+			"enabled": true
+		}
+	],
+	"_postman_variable_scope": "environment",
+	"_postman_exported_at": "2021-08-24T17:25:30.157Z",
+	"_postman_exported_using": "Postman/8.11.1"
+}
